@@ -1,8 +1,9 @@
-
 const Navbar = () => {
   return (
-    <div>Navbar</div>
-  )
-}
+    <div className="font-indie">MobileMenu
+      Navbar
+    </div>
+  );
+};
 
-export default Navbar
+export default Navbar;

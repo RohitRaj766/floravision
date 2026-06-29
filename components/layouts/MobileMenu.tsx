@@ -1,7 +1,7 @@
 
 const MobileMenu = () => {
   return (
-    <div>MobileMenu</div>
+    <div className="font-indie">MobileMenu</div>
   )
 }
 

@@ -1,4 +1,3 @@
-
 const PlantCards = () => {
   return (
     <div>PlantCards</div>
