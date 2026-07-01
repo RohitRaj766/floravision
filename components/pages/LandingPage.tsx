@@ -1,20 +1,30 @@
 import Navbar from "../layouts/Navbar";
-import MobileMenu from "../layouts/MobileMenu";
 import HeroSection from "../sections/HeroSection";
 import TopSelling from "../sections/TopSelling";
 import TestimonialCards from "../cards/TestimonialCards";
 import OxygenPlants from "../sections/OxygenPlants";
 import Footer from "../layouts/Footer";
+import TrendingPlants from "../sections/TrendingPlants";
 const LandingPage = () => {
   return (
     <div>
+      <main
+        className="
+        bg-[url('/images/hero/hero-bg.svg')]
+        bg-cover
+        bg-top
+        bg-no-repeat
+        w-full "
+      >
         <Navbar />
-        <MobileMenu />
         <HeroSection />
-        <TopSelling/>
-        <TestimonialCards />
-        <OxygenPlants />
-        <Footer />  
+        <TrendingPlants />
+      </main>
+
+      <TopSelling />
+      <TestimonialCards />
+      <OxygenPlants />
+      <Footer />
     </div>
   )
 }
