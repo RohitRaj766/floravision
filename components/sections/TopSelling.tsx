@@ -40,9 +40,9 @@ const plants = [
       "It is a popular tropical houseplant known for its distinctive, perforated leaves.",
     price: "400",
     image: "/images/plants/rose6.png",
-    width: 375,
+    width: 350,
     height: 320,
-    imageClassName: "-mt-12",
+    imageClassName: "-mt-25",
   },
   {
     name: "Sansevieria Plant",
@@ -50,9 +50,9 @@ const plants = [
       "It is a popular indoor plant admired for its striking appearance and low-maintenance nature.",
     price: "450",
     image: "/images/plants/rose4.png",
-    width: 370,
+    width: 350,
     height: 320,
-    imageClassName: "-mt-12",
+    imageClassName: "-mt-24",
   },
   {
     name: "Agave Plant",

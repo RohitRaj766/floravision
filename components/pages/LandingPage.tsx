@@ -5,6 +5,7 @@ import TestimonialCards from "../cards/TestimonialCards";
 import OxygenPlants from "../sections/OxygenPlants";
 import Footer from "../layouts/Footer";
 import TrendingPlants from "../sections/TrendingPlants";
+import Testimonials from "../sections/Testimonials";
 const LandingPage = () => {
   return (
     <div>
@@ -22,7 +23,7 @@ const LandingPage = () => {
       </main>
 
       <TopSelling />
-      <TestimonialCards />
+      <Testimonials />
       <OxygenPlants />
       <Footer />
     </div>
