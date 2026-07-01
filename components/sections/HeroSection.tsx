@@ -35,7 +35,7 @@ const HeroSection = () => {
             </div>
 
             {/* Review Card */}
-       <div className="relative mt-60 w-90">
+       <div className="relative mt-45 w-90">
   {/* Card background */}
   <Image
     src="/images/hero/Rectangle15.png"
