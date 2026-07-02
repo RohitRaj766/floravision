@@ -1,6 +1,8 @@
-const TypeTestimonials = {
-  testimonial1: "testimonial1",
-  testimonial2: "testimonial2",
-};
-
-export default TypeTestimonials;
+export interface TestimonialData {
+  name: string;
+  review: string;
+  image: string;
+  width: number;
+  height: number;
+  badge?: boolean;
+}
