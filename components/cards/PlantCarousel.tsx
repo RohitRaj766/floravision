@@ -3,29 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { FiChevronRight } from "react-icons/fi";
-
-const plants = [
-  {
-    name: "Aglaonema Plant",
-    type: "Indoor Plant",
-    image: "/images/plants/rose1.png",
-  },
-  {
-    name: "Peace Lily",
-    type: "Indoor Plant",
-    image: "/images/plants/rose3.png",
-  },
-  {
-    name: "Aglaonema Plant",
-    type: "Indoor Plant",
-    image: "/images/plants/rose1.png",
-  },
-    {
-    name: "Peace Lily",
-    type: "Indoor Plant",
-    image: "/images/plants/rose3.png",
-  }
-];
+import { plants } from "../../data/products";
 
 const PlantCarousel = () => {
   const [current, setCurrent] = useState(0);

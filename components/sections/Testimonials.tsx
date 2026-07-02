@@ -2,99 +2,60 @@
 
 import Image from "next/image";
 import { FaStar } from "react-icons/fa";
-
-const reviews = [
-  {
-    name: "Shelly Russel",
-    review:
-      "Just got my hands on some absolutely awesome plants, and I couldn't be happier!",
-    image: "/images/testimonials/shely.png",
-    width: 120,
-    height: 120,
-  
-  },
-  {
-    name: "Lula Rolfson",
-    review:
-      "Each one has its own unique charm and personality, and they've already started brightening up my space. ",
-    image: "/images/testimonials/lula.jpg",
-    width: 120,
-    height: 120,
-
-  },
-  {
-    name: "Carol Huels",
-    review:
-      "It's like bringing a little piece of nature indoors. Definitely worth the investment—my plant collection has never looked better!",
-    image: "/images/testimonials/carol.png",
-    width: 120,
-    height: 120,
-    
-    badge: true,
-  },
-];
-
-interface ReviewCardProps {
-  name: string;
-  review: string;
-  image: string;
-  width: number;
-  height: number;
-  imageClassName?: string;
-  badge?: boolean;
-}
+import { testimonials } from "../../data/testimonials";
+import { SECTION_BACKGROUNDS, SECTION_DECORATIONS, SECTION_HEADINGS } from "../../lib/constants";
+import type { TestimonialData } from "../../types/testimonials";
 
 const ReviewCard = ({
   name,
   review,
   image,
-}: ReviewCardProps) => {
+}: TestimonialData) => {
   return (
-    <div className="relative h-[340px] w-full">
+    <div className="relative w-full h-[300px] sm:h-[320px] lg:h-[340px]">
       {/* Card Background */}
       <Image
-        src="/images/common/Rectanglereview.png"
+        src={SECTION_BACKGROUNDS.testimonialCard}
         alt="Rectanglereview"
         fill
         className="object-contain"
       />
-     
-     
 
       {/* Content */}
-      <div className="absolute w-80 left-8 top-15 z-20">
-        <div className="flex items-center justify-center gap-4 h-20">
-        
-     <div className="w-16 h-16 rounded-full flex items-center justify-center overflow-hidden">
-  <Image
-    src={image}
-    alt={name}
-    width={64}
-    height={64}
-    className="w-full h-full object-cover"
-  />
-</div>
+      <div className="absolute inset-0 flex flex-col justify-center px-6 sm:px-8 lg:px-0">
+        <div className="w-full max-w-[320px] mx-auto lg:w-80 lg:left-8 lg:top-15">
+          <div className="flex items-center gap-3 sm:gap-4">
+            <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden flex items-center justify-center">
+              <Image
+                src={image}
+                alt={name}
+                width={64}
+                height={64}
+                className="w-full h-full object-cover"
+              />
+            </div>
 
-          <div>
-            <h3 className="text-3xl font-semibold text-white">
-              {name}
-            </h3>
+            <div>
+              <h3 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-white">
+                {name}
+              </h3>
 
-            <div className="mt-1 flex gap-1">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <FaStar
-                  key={i}
-                  size={12}
-                  className="text-yellow-400"
-                />
-              ))}
+              <div className="mt-1 flex gap-1">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <FaStar
+                    key={i}
+                    size={11}
+                    className="text-yellow-400 sm:w-3 sm:h-3"
+                  />
+                ))}
+              </div>
             </div>
           </div>
-        </div>
 
-        <p className="mt-6 text-sm leading-7 text-gray-300 px-4 py-2">
-          {review}
-        </p>
+          <p className="mt-4 sm:mt-6 text-xs sm:text-sm leading-6 lg:leading-7 text-gray-300 px-2 sm:px-4 py-2">
+            {review}
+          </p>
+        </div>
       </div>
     </div>
   );
@@ -102,38 +63,35 @@ const ReviewCard = ({
 
 const Testimonials = () => {
   return (
-    <section className="w-full bg-[#1B2316] py-24">
-      <div className="mx-auto max-w-7xl px-5">
+    <section className="w-full bg-[#1B2316] py-14 sm:py-18 lg:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-5">
         {/* Heading */}
-        <div className="relative mx-auto mb-20 w-fit pb-2">
+        <div className="relative mx-auto mb-12 sm:mb-16 lg:mb-20 w-fit pb-2">
           <Image
-            src="/images/common/leftcorner.svg"
+            src={SECTION_DECORATIONS.leftCorner}
             alt=""
             width={50}
             height={50}
-            className="absolute bottom-0 left-7"
+            className="absolute bottom-1 left-1 sm:left-3 lg:left-7 w-6 sm:w-8 lg:w-[50px]"
           />
 
-          <h2 className="px-10 text-center text-5xl font-bold text-white lg:text-6xl">
-            Customer Review
+          <h2 className="px-5 sm:px-8 lg:px-10 text-center text-2xl sm:text-4xl lg:text-6xl font-bold text-white">
+            {SECTION_HEADINGS.testimonials}
           </h2>
 
           <Image
-            src="/images/common/rightcorner.svg"
+            src={SECTION_DECORATIONS.rightCorner}
             alt=""
             width={50}
             height={50}
-            className="absolute right-7 top-1"
+            className="absolute right-1 sm:right-3 lg:right-7 -top-0.5 w-6 sm:w-8 lg:w-[50px]"
           />
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
-          {reviews.map((review) => (
-            <ReviewCard
-              key={review.name}
-              {...review}
-            />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-10 sm:gap-y-12 gap-x-6">
+          {testimonials.map((review) => (
+            <ReviewCard key={review.name} {...review} />
           ))}
         </div>
       </div>

@@ -1,6 +1,22 @@
-const TypeProducts = {
-  product1: "product1",
-  product2: "product2",
-};
+export interface PlantCardData {
+  name: string;
+  description: string;
+  price: string;
+  image: string;
+  width: number;
+  height: number;
+  imageClassName?: string;
+}
 
-export default TypeProducts;
+export interface TrendingPlantCardData {
+  title: string;
+  description: string;
+  price: string;
+  image: string;
+  imageAlt: string;
+  width: number;
+  height: number;
+  backgroundImage: string;
+  reverseLayout?: boolean;
+  imageClassName?: string;
+}

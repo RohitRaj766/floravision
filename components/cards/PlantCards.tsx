@@ -47,22 +47,25 @@ const PlantCard = ({
       </div>
 
       {/* Content */}
-      <div className="absolute bottom-8 left-8 right-8 z-10 p-5">
-        <h3 className="text-2xl  text-white">
+      <div className="absolute bottom-16 lg:bottom-8 left-8 right-8 z-10 p-5">
+        <h3 className="text-xl lg:text-2xl  text-white">
           {name}
         </h3>
 
-        <p className="mt-1  text-sm leading-6 text-gray-300">
+        <p className="mt-1 text-[12px]  lg:text-sm  leading-6 text-gray-300">
           {description}
         </p>
 
         <div className="mt-1 flex items-center justify-between">
-          <span className="text-3xl font-semibold text-white">
+          <span className="text-lg lg:text-3xl font-semibold text-white">
             Rs. {price}/-
           </span>
 
-          <button className="cursor-pointer flex h-12 w-12 items-center justify-center rounded-xl border border-white/30 text-white transition hover:bg-white hover:text-black">
+          <button className="cursor-pointer hidden  lg:flex h-12 w-12 items-center justify-center rounded-xl border border-white/30 text-white transition hover:bg-white hover:text-black">
             <FiShoppingBag size={20} />
+          </button>
+          <button className="cursor-pointer flex  lg:hidden h-9 w-9 items-center justify-center rounded-xl border border-white/30 text-white transition hover:bg-white hover:text-black">
+            <FiShoppingBag size={16} />
           </button>
         </div>
       </div>
